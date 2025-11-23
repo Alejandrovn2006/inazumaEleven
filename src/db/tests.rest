@@ -1,0 +1,11 @@
+get http://localhost:3000/players
+
+###
+get http://localhost:3000/special_moves
+
+###
+get http://localhost:3000/players/2
+
+###
+get http://localhost:3000/special_moves/14
+
