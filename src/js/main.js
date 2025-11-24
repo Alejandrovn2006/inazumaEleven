@@ -1,3 +1,4 @@
+import "../scss/style.scss"
 function createEl(tag, attrs = {}, ...children) {
   const el = document.createElement(tag);
   Object.entries(attrs).forEach(([k, v]) => {

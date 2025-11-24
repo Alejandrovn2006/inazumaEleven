@@ -2,13 +2,13 @@
   function createEl(tag, attrs = {}, ...children) {
     const el = document.createElement(tag);
     Object.entries(attrs).forEach(([k, v]) => {
-      if (k === "class") el.className = v;
-      else if (k === "html") el.innerHTML = v;
+      if (k == "class") el.className = v;
+      else if (k == "html") el.innerHTML = v;
       else el.setAttribute(k, v);
     });
     children.forEach((c) => {
       if (c != null)
-        el.append(typeof c === "string" ? document.createTextNode(c) : c);
+        el.append(typeof c == "string" ? document.createTextNode(c) : c);
     });
     return el;
   }

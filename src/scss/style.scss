@@ -1,0 +1,172 @@
+$bg-main: url("../images/types/inazumafondo.png");
+$color-light-1: rgba(242, 242, 242, 0.5);
+$color-light-2: rgba(230, 230, 230, 0.8);
+$color-scroll-thumb: rgb(255, 204, 0);
+$color-border: black;
+$button-bg: #24292e;
+$button-bg-hover: #1c1f23;
+$border-radius: 6px;
+$font-size-mobile-left: 10px;
+$font-size-mobile-right: 8px;
+
+body {
+  background-image: $bg-main;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+}
+
+.left {
+  width: 50%;
+  background-color: $color-light-1;
+}
+
+.right {
+  width: 50%;
+  background-color: $color-light-2;
+  padding: 1%;
+  border-left: 1px solid $color-border;
+}
+
+.button-area {
+  margin: 10px;
+}
+
+.player-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: calc(100% - 100px);
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+    border-radius: $border-radius;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-scroll-thumb;
+    border-radius: $border-radius;
+  }
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: calc(40% - 10px);
+
+  img {
+    width: 50px;
+    margin-right: 10px;
+  }
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.player-item {
+  border: 1px solid $color-border;
+  padding: 5px;
+  margin: 5px;
+}
+
+.player-divTeam {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 5%;
+  }
+}
+
+.element-technique img {
+  height: 24px;
+}
+
+@font-face {
+  font-family: InazumaNormal;
+  src: url(../fonts/InazumaNormal.otf);
+}
+
+@font-face {
+  font-family: InazumaItalic;
+  src: url(../fonts/InazumaItalic.otf);
+}
+
+@font-face {
+  font-family: InazumaItalicBold;
+  src: url(../fonts/InazumaItalicBold.otf);
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .player-list {
+    margin-top: 15px;
+  }
+
+  .left {
+    width: 98%;
+    height: 40%;
+    order: 2;
+    font-size: $font-size-mobile-left;
+  }
+
+  .right {
+    width: 98%;
+    min-height: 45%;
+    height: auto;
+    order: 1;
+    font-size: $font-size-mobile-right;
+  }
+
+  .element-technique img {
+    height: 12px;
+  }
+
+  .button-area {
+    margin-top: 10px;
+  }
+}
+
+#search,
+select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button-area button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: $button-bg;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    background-color: $button-bg-hover;
+  }
+}
